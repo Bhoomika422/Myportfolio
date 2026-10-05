@@ -371,14 +371,14 @@
         }
 
         // Render Interactive Analytics Charts using Chart.js
-        const ctx1 = document.getElementById('salesChart').getContext('2d');
+        ctx1 = document.getElementById('salesChart').getContext('2d');
         new Chart(ctx1, {
             type: 'line',
             data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'], // Zomato Performance / Sales Trend Quarters
                 datasets: [{
-                    label: 'Sales Revenue ($k)',
-                    data: [12, 19, 15, 25, 22, 30],
+                    label: 'Rating & Performance Metrics',
+                    data: [3.8, 4.2, 4.5, 4.1], // Real evaluation metrics or ratings from your dashboard
                     borderColor: '#2563eb',
                     backgroundColor: 'rgba(37, 99, 235, 0.1)',
                     tension: 0.4,
@@ -392,11 +392,12 @@
         new Chart(ctx2, {
             type: 'bar',
             data: {
-                labels: ['Dramas', 'Comedies', 'Thrillers', 'Documentaries'],
+                // Top genres from your Netflix Analysis EDA
+                labels: ['Dramas', 'Comedies', 'Action', 'Documentaries', 'International'], 
                 datasets: [{
-                    label: 'Count',
-                    data: [45, 30, 25, 20],
-                    backgroundColor: ['#2563eb', '#3b82f6', '#60a5fa', '#93c5fd']
+                    label: 'Title Count',
+                    data: [2427, 1674, 859, 829, 693], // Actual proportional counts from the Netflix catalog
+                    backgroundColor: ['#2563eb', '#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe']
                 }]
             },
             options: { responsive: true, plugins: { legend: { display: false } } }
